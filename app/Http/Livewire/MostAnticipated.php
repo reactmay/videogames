@@ -17,7 +17,7 @@ class MostAnticipated extends Component
         $current = Carbon::now()->timestamp;
 
         $this->mostAnticipated = Cache::remember('most-anticipated', 7, function () use ($afterFourMonths, $current) {
-            // sleep(3);
+            sleep(3);
             return Http::withHeaders(config('services.igdb'))
                 ->withOptions([
                     'body' => "

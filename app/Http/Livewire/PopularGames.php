@@ -17,7 +17,7 @@ class PopularGames extends Component
         $after = Carbon::now()->addMonths(2)->timestamp;
 
         $this->popularGames = Cache::remember('popular-games', 7, function () use ($before, $after) {
-            // sleep(3);
+            sleep(3);
             return Http::withHeaders(config('services.igdb'))
                 ->withOptions([
                     'body' => "

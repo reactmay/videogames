@@ -17,7 +17,7 @@ class RecentlyReviewed extends Component
         $current = Carbon::now()->timestamp;
 
         $this->recentlyReviewed = Cache::remember('recently-reviewed', 7, function () use ($before, $current) {
-            // sleep(3);
+            sleep(3);
             return Http::withHeaders(config('services.igdb'))
                 ->withOptions([
                     'body' => "
